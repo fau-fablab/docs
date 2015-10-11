@@ -1,0 +1,48 @@
+\newcommand{\basedir}{fablab-document/}
+\documentclass{\basedir/fablab-document}
+% \usepackage{fancybox} %ovale Boxen für Knöpfe - nicht mehr benötigt
+\usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
+\date{}
+\author{}
+\title{Nachkaufliste}
+\fancyfoot[C]{Dateifreigabe/1\_FabLab\_Einweisungen/docs/nachkaufliste.pdf, erzeugt aus https://github.com/fau-fablab/docs}
+\fancyfoot[R]{}
+\newcommand{\thickhline}{\noalign{\hrule height 2pt}}
+
+
+\begin{document}
+Wenn der Vorrat eines Artikels langsam zur Neige geht, oder ihr einen Standardartikel vermisst, schreibt es hier rein. Dringendes bitte auch per Email an kontakt@fablab.fau.de. Das Feld \enquote{gewünschte Menge} darf auch leer gelassen werden, dann wird die übliche Lagermenge nachgekauft.
+
+Bitte keine Exotenwünsche hier eintragen, nur Sachen die mit großer Wahrscheinlichkeit auch wieder verkauft werden. 
+
+\textbf{An die Betreuer: Wenn möglich, bitte gleich ins ERP eintragen und nicht hier.}
+
+\newcommand{\bsp}[1]{\textcolor{gray}{\it #1}}
+\newcommand{\beispielzeile}[4]{\bsp{#1} & \bsp{#2} & \bsp{#3} & \bsp{#4}  \\}
+\newcommand{\leerzeile}{\vbox{\vspace{2.5em}} & & & \\ \hline}
+\begin{tabularx}{\textwidth}{|c|c|X|c|} \hline
+\bf Artikelnr. (von Etikett)         &  \bf gewünschte  & \bf Beschreibung & \bf im ERP \\
+
+oder \enquote{nicht nummeriert}  &  \bf Menge       & bei Neukauf: Begründung, vollständige    & \bf eingetragen \\
+oder \enquote{Neukauf} & &  Bezeichnung, Email für Rückfragen & \\ \thickhline
+\beispielzeile{Neukauf}{20}{Beispielartikel, schmeckt gut, xy@z.net}{Max 1.1.11} \hline
+\beispielzeile{1234}{5}{Musterartikel}{} \hline
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\leerzeile
+\end{tabularx}
+
+\end{document}
