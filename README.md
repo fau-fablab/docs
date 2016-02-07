@@ -6,6 +6,8 @@ diverse Aushänge
 
 **PDF Download**: 
 
+- [Ausleihliste Werkzeug](https://user.fablab.fau.de/~buildserver/docs/AusleihlisteWerkzeug.pdf)
+- Laserzeit Bezahlzettel [Standard (4 pro Seite)](https://user.fablab.fau.de/~buildserver/docs/Laserzeit_Bezahlzettel_DinA4_2x2.pdf) bzw. [extra klein (8 pro Seite)](https://user.fablab.fau.de/~buildserver/docs/Laserzeit_Bezahlzettel_DinA4_4x2_extra_klein.pdf)
 - [Nachkaufliste](https://user.fablab.fau.de/~buildserver/docs/nachkaufliste.pdf)
 
 auschecken
