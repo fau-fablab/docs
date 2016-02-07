@@ -1,5 +1,7 @@
 # ignore PDFs in the main directory - please put pdf images into a subdir.
 /*.pdf
+ausleihliste/*.pdf
+laserbezahlzettel/*.pdf
 output/
 revision.tex
 *~
