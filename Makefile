@@ -9,6 +9,9 @@ sonstige-dateien: ./output/Laserzeit_Bezahlzettel_DinA4_4x2_extra_klein.pdf ./ou
 ./output/AusleihlisteWerkzeug.pdf: ./ausleihliste/AusleihlisteWerkzeug.xls
 	./ausleihliste/build.sh
 
+./output/geraetenutung.pdf:
+	cp geraetenutzung.pdf output/geraetenutzung.pdf
+
 ./output/oeffnungsschilder.pdf:
 	cp oeffnungsschilder.pdf output/oeffnungsschilder.pdf
 
