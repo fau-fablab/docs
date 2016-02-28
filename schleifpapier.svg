@@ -62,9 +62,9 @@
      inkscape:window-height="1117"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="378.29777"
-     inkscape:cy="630.71556"
+     inkscape:zoom="1"
+     inkscape:cx="244.18551"
+     inkscape:cy="324.45123"
      inkscape:window-x="-4"
      inkscape:window-y="-3"
      inkscape:window-maximized="1"
@@ -88,11 +88,11 @@
        id="text104"
        x="21.623201"
        y="-8.2496347"><tspan
-         style="font-size:8.45419979px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#110f0d;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica"
-         x="21.623201 26.323732 28.674013 31.024279 35.724808 39.951904 42.30217 44.652451 47.002716 51.703247 53.580078 55.930344 60.630875 65.331421 70.031952 72.382217 76.609314 81.30986 88.352203 90.702469 93.052734 97.753281 102.45381 105.26906 107.61932 112.31985 117.0204 118.89723 123.59776 128.29829 130.64856 135.34911 140.04964 144.27673 148.50383 150.8541 155.55464 157.43149 162.132 166.83253 169.1828 176.22516 180.92569 185.15279 187.50305 192.2036 195.01884"
+         style="font-size:8.45419979px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#110f0d;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+         x="21.623201"
          y="-8.2496347"
          sodipodi:role="line"
-         id="tspan106">https://github.com/fau-fablab/docs/blob/master/schleifpapier.svg</tspan></text>
+         id="tspan106">https://github.com/fau-fablab/docs/</tspan></text>
 <path
        d="m 553.96235,638.02336 -30.36573,17.52724 0,34.50065 c 1.08315,0.43783 2.13607,0.93366 3.16204,1.53487 16.67363,9.69279 18.42251,37.82279 3.88659,62.85039 -14.53102,25.01289 -39.83471,37.44704 -56.51405,27.76323 -16.68343,-9.68544 -18.42905,-37.83259 -3.89149,-62.85447 2.14097,-3.67911 4.51148,-7.07559 7.05026,-10.17719 l 0,-26.89247 -35.32894,20.39603 0,129.41747 -12.9357,7.47095 c -11.05285,-20.65988 -17.4186,-44.20161 -17.4186,-69.26515 0,-79.65635 63.30865,-144.49904 142.35562,-147.05171 l 0,14.78016 z"
        style="opacity:0.30000299;fill:#349963;fill-opacity:1;fill-rule:nonzero;stroke:none"
@@ -210,4 +210,29 @@
          x="21.802549"
          y="-159.58633"
          id="tspan3030">on top of this one.</tspan></text>
+<path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 28.5,71.362546 348.5,0"
+       id="path3042"
+       inkscape:connector-curvature="0"
+       transform="matrix(0.8,0,0,-0.8,0,841.89)" /><path
+       inkscape:connector-curvature="0"
+       id="path3044"
+       d="m 22.8,399.19996 446.55966,0"
+       style="fill:none;stroke:#7b7879;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" /><text
+       style="font-size:12px"
+       id="text104-7"
+       x="39.313591"
+       y="-114.62724"
+       transform="scale(1,-1)"><tspan
+         style="font-size:8.45419979px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#110f0d;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+         x="39.313591"
+         y="-114.62724"
+         sodipodi:role="line"
+         id="tspan3067">Hier Etiketten</tspan><tspan
+         style="font-size:8.45419979px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#110f0d;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:FreeSans;-inkscape-font-specification:FreeSans"
+         x="39.313591"
+         y="-104.05949"
+         sodipodi:role="line"
+         id="tspan3071">hinkleben</tspan></text>
 </g></svg>
