@@ -1,4 +1,6 @@
-default: all sonstige-dateien
+.PHONY: all default fab12_bericht sonstige-dateien
+
+default: all sonstige-dateien fab12_bericht
 
 # Sonstige Dateien (Openoffice, Inkscape, was auch immer)
 sonstige-dateien: ./output/Laserzeit_Bezahlzettel_DinA4_4x2_extra_klein.pdf ./output/AusleihlisteWerkzeug.pdf
@@ -14,6 +16,9 @@ sonstige-dateien: ./output/Laserzeit_Bezahlzettel_DinA4_4x2_extra_klein.pdf ./ou
 
 ./output/oeffnungsschilder.pdf:
 	cp oeffnungsschilder.pdf output/oeffnungsschilder.pdf
+
+fab12_bericht:
+	$(MAKE) -C fab12_bericht
 
 # TeX Dateien
 TARGET=nachkaufliste
