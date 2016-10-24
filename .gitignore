@@ -22,6 +22,7 @@ revision.tex
 # *.ps
 # *.eps
 # *.pdf
+fab12_bericht.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl
@@ -115,3 +116,5 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
+
+.directory
