@@ -11,8 +11,8 @@
    width="210mm"
    height="297mm"
    id="svg2"
-   sodipodi:docname="Chemiebereich.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+   sodipodi:docname="Chemiebereich-keineLebensmittel.svg"
+   inkscape:version="0.92.1 r15371">
   <metadata
      id="metadata9">
     <rdf:RDF>
@@ -34,16 +34,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="3840"
-     inkscape:window-height="2070"
+     inkscape:window-width="1366"
+     inkscape:window-height="715"
      id="namedview7"
      showgrid="false"
      units="mm"
-     inkscape:zoom="1.1200725"
-     inkscape:cx="344.79431"
-     inkscape:cy="481.93286"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:zoom="0.97517857"
+     inkscape:cx="396.85039"
+     inkscape:cy="112.02136"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg2" />
   <defs
@@ -73,15 +73,20 @@
   </g>
   <text
      xml:space="preserve"
-     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:30px;line-height:25.20000076px;font-family:'长仿宋体';-inkscape-font-specification:'长仿宋体 Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     x="202.28302"
-     y="1093.9501"
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:30px;line-height:25.20000076px;font-family:'长仿宋体';-inkscape-font-specification:'长仿宋体 Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#999999;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+     x="12.28302"
+     y="1079.9501"
      id="text4493"><tspan
        sodipodi:role="line"
        id="tspan4491"
-       x="202.28302"
-       y="1093.9501"
-       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:16px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light'">Z:\1_fablab\Beschilderung, Beschriftung\Chemiebereich.svg</tspan></text>
+       x="12.28302"
+       y="1079.9501"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:16px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light';fill:#999999;">https://github.com/fau-fablab/docs/blob/master/</tspan><tspan
+       sodipodi:role="line"
+       x="12.28302"
+       y="1109.1727"
+       style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:16px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Light';fill:#999999;"
+       id="tspan4492">Arbeitsschutz/Hinweisschilder/Chemiebereich-keineLebensmittel.svg</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:65.75882721px;line-height:55.23741531px;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.19196081px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
