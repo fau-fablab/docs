@@ -3,10 +3,7 @@
 default: all sonstige-dateien fab12_bericht
 
 # Sonstige Dateien (Openoffice, Inkscape, was auch immer)
-sonstige-dateien: ./output/Laserzeit_Bezahlzettel_DinA4_4x2_extra_klein.pdf ./output/AusleihlisteWerkzeug.pdf
-
-./output/Laserzeit_Bezahlzettel_DinA4_4x2_extra_klein.pdf: ./laserbezahlzettel/Laserzeit_Bezahlzettel_DinA6.odt
-	./laserbezahlzettel/build.sh
+sonstige-dateien: ./output/AusleihlisteWerkzeug.pdf
 
 ./output/AusleihlisteWerkzeug.pdf: ./ausleihliste/AusleihlisteWerkzeug.xls
 	./ausleihliste/build.sh
