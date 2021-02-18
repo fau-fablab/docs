@@ -18,5 +18,5 @@ fab12_bericht:
 	$(MAKE) -C fab12_bericht
 
 # TeX Dateien
-TARGET=nachkaufliste
+TARGET=nachkaufliste abrechnung
 include fablab-document/Makefile.include
