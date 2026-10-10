@@ -1,0 +1,110 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Drehzahltabelle Standbohrmaschine (Aushang links neben der Standbohrmaschine)
+% CC-BY-SA 3.0, FAU FabLab
+% Früher Hinweisschilder_divers/Drehzahltabelle.ods (LibreOffice), jetzt LaTeX.
+% Werte wie in der bisherigen Tabelle, berechnet mit rpm.m für z = 2 Schneiden:
+% n = vc * 1000 / (pi * d * z)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,landscape,10pt]{scrartcl}
+\usepackage{fablab-aushang}
+
+% Materialfarben (Kopf der Tabelle)
+\definecolor{mHolz}{HTML}{D9A066}
+\definecolor{mStahl}{HTML}{8FA3B5}
+\definecolor{mEdel}{HTML}{C9D3DD}
+\definecolor{mAluW}{HTML}{83CAFF}
+\definecolor{mAluH}{HTML}{9999FF}
+\definecolor{mKunst}{HTML}{FFCC00}
+
+% dicke Linie zwischen den Materialien, dünne graue Linie innerhalb
+\newcolumntype{I}{!{\color{black}\vrule width 0.8pt}}
+\newcolumntype{O}{!{\color{black}\vrule width 1.2pt}}
+\newcolumntype{C}{>{\centering\arraybackslash}m{\wD}}
+\newlength{\wD}  % Breite einer Wertespalte, folgt aus der Restbreite
+\newlength{\wDD} % zwei Wertespalten zusammen
+\newcommand{\dickeLinie}{\noalign{\hrule height 0.8pt}}
+\newcommand{\Rand}{\noalign{\hrule height 1.2pt}}
+\newcommand{\Z}{\rowcolor{black!7}}  % jede zweite Zeile grau hinterlegen
+
+\begin{document}
+
+% ------------------------------ Kopf ---------------------------------
+\Kopf{Drehzahltabelle Standbohrmaschine}{%
+  Bohrer und Kegelsenker nach Werkstoff und Werkzeug.
+  Alle Drehzahlen in Umdrehungen pro Minute (U/min).}
+
+% ----------------------------- Tabelle -------------------------------
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}
+\arrayrulecolor{black!60}
+\setlength{\wD}{\dimexpr(\linewidth-37mm-20\tabcolsep-9pt)/9\relax}
+\setlength{\wDD}{\dimexpr2\wD+2\tabcolsep+0.4pt\relax}
+\begin{tabular}{O>{\raggedright\arraybackslash}m{37mm}OCIC|CICIC|CIC|CICO}
+  \Rand
+  % ------------------------------ Bohrer ------------------------------
+  \textbf{\large 1. Bohrer}
+  & \cellcolor{mHolz!50}\textbf{Holz und ähnliches}
+  & \multicolumn{2}{>{\columncolor{mStahl!50}\centering\arraybackslash}m{\wDD}I}{\textbf{Baustahl, z.\,B. S235}\newline unter 750\,N/mm²}
+  & \cellcolor{mEdel!60}\textbf{Edelstahl}\newline unter 850\,N/mm²
+  & \multicolumn{2}{>{\columncolor{mAluW!50}\centering\arraybackslash}m{\wDD}I}{\textbf{Aluminium weich}\newline z.\,B. Guss}
+  & \multicolumn{2}{>{\columncolor{mAluH!50}\centering\arraybackslash}m{\wDD}I}{\textbf{Aluminium hart}\newline unter 500\,N/mm²}
+  & \cellcolor{mKunst!50}\textbf{Kunststoffe}\newline z.\,B. PVC, PMMA \\
+  \hline
+  \small Bohrerart, Art.-Nr.
+  & \cellcolor{mHolz!20}\small Holzbohrer
+  & \cellcolor{mStahl!20}\small schwarz, rotring\newline 114020, 114400
+  & \cellcolor{mStahl!20}\small TiN (golden)\newline 114360
+  & \cellcolor{mEdel!25}\small HSS-E rotring\newline 114400
+  & \cellcolor{mAluW!20}\small TiN (golden)\newline 114360
+  & \cellcolor{mAluW!20}\small HSS-W gelbring\newline 114200
+  & \cellcolor{mAluH!20}\small schwarz, rotring\newline 114020, 114400
+  & \cellcolor{mAluH!20}\small TiN (golden)\newline 114360
+  & \cellcolor{mKunst!20}\small HSS-W gelbring\newline 114200 \\
+  \hline
+  $v_c$ [m/min]
+  & \cellcolor{mHolz!20}\textbf{60}
+  & \cellcolor{mStahl!20}\textbf{30} & \cellcolor{mStahl!20}\textbf{37}
+  & \cellcolor{mEdel!25}\textbf{12}
+  & \cellcolor{mAluW!20}\textbf{50} & \cellcolor{mAluW!20}\textbf{40}
+  & \cellcolor{mAluH!20}\textbf{40} & \cellcolor{mAluH!20}\textbf{50}
+  & \cellcolor{mKunst!20}\textbf{70} \\
+  \dickeLinie
+  \textbf{Bohrer-Ø $d$ [mm]} & \multicolumn{9}{cO}{\small\itshape Drehzahl $n$ [U/min]} \\
+  \hline
+  \textbf{2}  & 4.775 & 2.387 & 2.944 & 955 & 3.979 & 3.183 & 3.183 & 3.979 & 5.570 \\ \hline
+  \Z\textbf{3}  & 3.183 & 1.592 & 1.963 & 637 & 2.653 & 2.122 & 2.122 & 2.653 & 3.714 \\ \hline
+  \textbf{4}  & 2.387 & 1.194 & 1.472 & 477 & 1.989 & 1.592 & 1.592 & 1.989 & 2.785 \\ \hline
+  \Z\textbf{5}  & 1.910 & 955 & 1.178 & 382 & 1.592 & 1.273 & 1.273 & 1.592 & 2.228 \\ \hline
+  \textbf{6}  & 1.592 & 796 & 981 & 318 & 1.326 & 1.061 & 1.061 & 1.326 & 1.857 \\ \hline
+  \Z\textbf{7}  & 1.364 & 682 & 841 & 273 & 1.137 & 909 & 909 & 1.137 & 1.592 \\ \hline
+  \textbf{8}  & 1.194 & 597 & 736 & 239 & 995 & 796 & 796 & 995 & 1.393 \\ \hline
+  \Z\textbf{9}  & 1.061 & 531 & 654 & 212 & 884 & 707 & 707 & 884 & 1.238 \\ \hline
+  \textbf{10} & 955 & 477 & 589 & 191 & 796 & 637 & 637 & 796 & 1.114 \\ \hline
+  \Z\textbf{11} & 868 & 434 & 535 & 174 & 723 & 579 & 579 & 723 & 1.013 \\ \hline
+  \textbf{12} & 796 & 398 & 491 & 159 & 663 & 531 & 531 & 663 & 928 \\ \hline
+  \Z\textbf{13} & 735 & 367 & 453 & 147 & 612 & 490 & 490 & 612 & 857 \\ \hline
+  \textbf{14} & 682 & 341 & 421 & 136 & 568 & 455 & 455 & 568 & 796 \\ \hline
+  \Z\textbf{15} & 637 & 318 & 393 & 127 & 531 & 424 & 424 & 531 & 743 \\
+  \Rand
+  % ---------------------------- Kegelsenker ---------------------------
+  \textbf{\large 2. Kegelsenker}\newline $v_c$ [m/min]
+  & \cellcolor{mHolz!20}--
+  & \multicolumn{2}{>{\columncolor{mStahl!20}}cI}{\textbf{27}}
+  & \cellcolor{mEdel!25}\textbf{7}
+  & \multicolumn{2}{>{\columncolor{mAluW!20}}cI}{\textbf{25}}
+  & \multicolumn{2}{>{\columncolor{mAluH!20}}cI}{\textbf{28}}
+  & \cellcolor{mKunst!20}\textbf{70} \\
+  \dickeLinie
+  \textbf{Schraube -- Senker-Ø} & \multicolumn{9}{cO}{\small\itshape Drehzahl $n$ [U/min]} \\
+  \hline
+  \textbf{M3 -- 6,3\,mm}   & -- & \multicolumn{2}{cI}{682} & 177 & \multicolumn{2}{cI}{632} & \multicolumn{2}{cI}{707} & 1.768 \\ \hline
+  \Z\textbf{M4 -- 8,3\,mm}   & -- & \multicolumn{2}{cI}{518} & 134 & \multicolumn{2}{cI}{479} & \multicolumn{2}{cI}{537} & 1.342 \\ \hline
+  \textbf{M5 -- 10,4\,mm}  & -- & \multicolumn{2}{cI}{413} & 107 & \multicolumn{2}{cI}{383} & \multicolumn{2}{cI}{428} & 1.071 \\ \hline
+  \Z\textbf{M6 -- 12,4\,mm}  & -- & \multicolumn{2}{cI}{347} & 90  & \multicolumn{2}{cI}{321} & \multicolumn{2}{cI}{359} & 898 \\ \hline
+  \textbf{M8 -- 16,5\,mm}  & -- & \multicolumn{2}{cI}{260} & 68  & \multicolumn{2}{cI}{241} & \multicolumn{2}{cI}{270} & 675 \\ \hline
+  \Z\textbf{M10 -- 20,5\,mm} & -- & \multicolumn{2}{cI}{210} & 54  & \multicolumn{2}{cI}{194} & \multicolumn{2}{cI}{217} & 543 \\ \hline
+  \textbf{M12 -- 25\,mm}   & -- & \multicolumn{2}{cI}{172} & 45  & \multicolumn{2}{cI}{159} & \multicolumn{2}{cI}{178} & 446 \\
+  \Rand
+\end{tabular}
+
+\end{document}

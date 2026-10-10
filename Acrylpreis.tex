@@ -1,0 +1,64 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acrylverkauf: Plattengrößen und Preisfaktoren (Aushang)
+% CC-BY-SA 3.0, FAU FabLab
+% Früher Acrylpreis_Alt.pdf, jetzt LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{scrartcl}
+\usepackage{fablab-aushang}
+\geometry{left=15mm,right=15mm,top=12mm,bottom=18mm}
+
+% Eine Platte im Maßstab 1:6:  \Platte{x}{y}{Breite}{Höhe}{Name}{Preisfaktor}{Farbanteil}
+% (Koordinaten und Maße in mm der echten Platte)
+\newcommand{\Platte}[7]{%
+  \fill[fablab!#7] (#1/6,#2/6) rectangle ++(#3/6,#4/6);
+  \draw[black, line width=1.2pt] (#1/6,#2/6) rectangle ++(#3/6,#4/6);
+  \node[align=center] at (#1/6+#3/12,#2/6+#4/12)
+    {\textbf{#5}\\[0.5mm] \small #3\,×\,#4\,mm\\[0.5mm] \small Faktor \textbf{#6}};}
+
+\begin{document}
+
+% ------------------------------ Kopf ---------------------------------
+\Kopf{Acrylverkauf}{Acrylglas wird \textbf{nur} in \textbf{viertel, halben und ganzen Platten} verkauft.}
+
+\vspace{8mm}
+{\Large\bfseries Wie funktioniert das genau?}\\[2mm]
+Es gibt folgende Plattengrößen zu kaufen:\\[3mm]
+
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.5}
+\arrayrulecolor{black!60}
+\begin{tabularx}{\linewidth}{!{\color{black}\vrule width 1.2pt}>{\bfseries}p{0.34\linewidth}|p{0.24\linewidth}|X!{\color{black}\vrule width 1.2pt}}
+  \noalign{\hrule height 1.2pt}
+  \rowcolor{kopf} Name & \textbf{Maße} & \textbf{Preisfaktor} \\
+  \noalign{\hrule height 0.8pt}
+  ganze Platte        & 600\,×\,300\,mm & \textbf{1} (Grundpreis) \\ \hline
+  \rowcolor{black!7}
+  quadratische Platte & 300\,×\,300\,mm & \textbf{½} (halber Grundpreis) \\ \hline
+  lange Platte        & 600\,×\,150\,mm & \textbf{½} (halber Grundpreis) \\ \hline
+  \rowcolor{black!7}
+  viertel Platte      & 300\,×\,150\,mm & \textbf{¼} (viertel Grundpreis) \\
+  \noalign{\hrule height 1.2pt}
+\end{tabularx}
+
+\vspace{6mm}
+Wenn du z.\,B. eine viertel Platte haben willst, schau zuerst, ob es schon eine vorgeschnittene gibt.
+Wenn nicht, dann schneide erst eine ganze (oder halbe) Platte in vier (oder zwei) Teile.
+Hierfür müssen natürlich \textbf{keine Lasergebühren} gezahlt werden.
+
+\vspace{2mm}
+Eine Schneidevorlage findest du in der Dateifreigabe unter \texttt{0\_Laservorlage}.
+
+% ----------------------- Plattengrößen 1:6 ---------------------------
+\vfill
+\begin{center}
+\begin{tikzpicture}[x=1mm,y=1mm]
+  \Platte{0}{190}{600}{300}{ganze Platte}{1}{25}
+  \Platte{650}{190}{300}{300}{quadratische Platte}{½}{15}
+  \Platte{0}{0}{600}{150}{lange Platte}{½}{15}
+  \Platte{650}{0}{300}{150}{viertel Platte}{¼}{8}
+\end{tikzpicture}\\[3mm]
+\small Plattengrößen im Maßstab 1\,:\,6
+\end{center}
+\vfill
+
+\end{document}

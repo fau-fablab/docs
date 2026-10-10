@@ -1,0 +1,106 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Verbandbuch als Loseblatt: Seite 1 Anschreiben für einen Fensterumschlag
+% (DIN 5008 Form A), Seite 2 Dokumentation von Erste-Hilfe-Leistungen.
+% Immer beide Seiten als Duplex drucken.
+% CC-BY-SA 3.0, FAU FabLab
+% Früher Verbandbuch/Verbandbuch-Loseblatt.doc, jetzt LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,11pt]{scrartcl}
+\usepackage{fablab-aushang}
+\geometry{left=25mm,right=20mm,top=12mm,bottom=16mm}
+
+\definecolor{ersteHilfe}{HTML}{006A00}
+% Strich zum Ausfüllen
+\newcommand{\Feld}[1]{\rule{#1}{0.4pt}}
+\newcommand{\Zeit}{\Feld{8mm}\,:\,\Feld{8mm} Uhr am \Feld{8mm}\,.\,\Feld{8mm}\,.\,20\Feld{8mm}}
+
+% Seite 1: Kopf, Anschrift und Falzmarken an festen Stellen
+\newcommand{\Pos}[3]{\put(\LenToUnit{#1},\LenToUnit{\paperheight-#2}){#3}}
+\AddToShipoutPictureFG*{%
+  \AtPageLowerLeft{%
+    % Kopf: Logo, grauer Balken, Erste-Hilfe-Zeichen
+    \Pos{25mm}{24mm}{\colorbox{kopf}{\makebox[155mm][l]{\Logo{11mm}\hfill
+      \tikz{\fill[ersteHilfe] (0,0) rectangle (11mm,11mm);
+        \fill[white] (4mm,1.8mm) rectangle (7mm,9.2mm) (1.8mm,4mm) rectangle (9.2mm,7mm);}}}}
+    % Rücksendeangabe und Anschrift im Fenster
+    \Pos{25mm}{33mm}{\scriptsize FAU FabLab · c/o GS EEI · Cauerstr.~7 · 91058 Erlangen}
+    \Pos{25mm}{52mm}{\parbox[t]{80mm}{Per Hauspost an:\\
+      \textbf{Geschäftsstelle EEI, Sekretariat FAU FabLab}\\
+      Cauerstraße 7, 1.~OG, Erlangen}}
+    % Angaben rechts
+    \Pos{125mm}{38mm}{\parbox[t]{65mm}{%
+      Datum:\\[4mm] {\large\Feld{10mm}\,.\,\Feld{10mm}\,.\,20\Feld{10mm}}\\[4mm]
+      {\footnotesize Blatt nach der Aufbewahrungsfrist von \emph{fünf} Jahren für
+      Verbandbücher vernichten (§\,24 Abs.\,6 DGUV Vorschrift~1).}\\[3mm]
+      Blatt-Nummer: {\large\Feld{12mm}\,/\,20\Feld{10mm}}\\
+      (wird durch das Sekretariat vergeben)}}
+    % Falzmarken und Lochmarke
+    \Pos{5mm}{87mm}{\rule{5mm}{0.4pt}}
+    \Pos{5mm}{148.5mm}{\rule{8mm}{0.4pt}}
+    \Pos{5mm}{192mm}{\rule{5mm}{0.4pt}}}}
+
+\begin{document}
+% ------------------------------ Seite 1 ------------------------------
+\setlength{\parskip}{0.6em}
+\vspace*{78mm}
+{\large\bfseries Verbandbuch}
+
+\bigskip
+Hallo liebe Nutzerin, hallo lieber Nutzer,
+
+es ist nicht schlimm, wenn du dich bei uns verletzt hast. Material zur Ersten Hilfe findest
+du im Verbandschrank am Übergang von Hauptraum und Elektrowerkstatt.
+
+Bitte melde dich bei jemandem von uns Betreuerinnen und Betreuern und fülle die umseitige
+Dokumentation von Erste-Hilfe-Leistungen aus (auch bekannt als Verbandbuch). Dieses
+Formular steckst du in einen Briefumschlag mit Fenster und lässt es in die Hauspost geben.
+Unser Sekretariat wird die Dokumentation datenschutzgerecht aufbewahren.
+
+\textbf{Bitte stelle dich im Zweifel immer einem Arzt vor.}
+
+\bigskip
+Grüße und gute Besserung,\\
+deine FabLab-Betreuer
+
+\bigskip
+\textbf{Anlage}\\
+Dokumentation von Erste-Hilfe-Leistungen (auf der Rückseite)
+
+\vfill
+\fcolorbox{black}{kopf}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\itshape
+  Hinweis an das Sekretariat:\\
+  Bitte dieses Blatt mit der Dokumentation von Erste-Hilfe-Leistungen in den Ordner
+  „FabLab-Verbandbuch“ abheften, nachdem oben rechts die laufende Nummer eingetragen wurde.
+  Danke!}}
+
+\medskip
+{\footnotesize Beim Nachdrucken immer beide Seiten als Duplex ausdrucken.}
+\newpage
+
+% ------------------------------ Seite 2 ------------------------------
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.25}
+\newcommand{\Abschnitt}[1]{\rowcolor{black!55}\multicolumn{1}{|c|}{\color{white}\large #1}\\ \hline}
+% \Zeile{Höhe}{Inhalt}
+\newcommand{\Zeile}[2]{\rule[-#1]{0pt}{#1}\parbox[t]{\linewidth}{#2}\\ \hline}
+\begin{tabularx}{\linewidth}{|X|}
+  \hline
+  \rowcolor{kopf}\multicolumn{1}{|c|}{\rule{0pt}{6mm}\large\bfseries Dokumentation von Erste-Hilfe-Leistungen}\\
+  \rowcolor{kopf}\multicolumn{1}{|c|}{\rule[-2mm]{0pt}{2mm}(nach §\,24 Abs.\,6 DGUV Vorschrift~1)}\\ \hline
+  \Abschnitt{Angaben zum Hergang des Unfalls bzw. des Gesundheitsschadens}
+  \Zeile{16mm}{Name der verletzten bzw. erkrankten Person:}
+  \Zeile{9mm}{Datum und Uhrzeit:\\ \hspace*{40mm}\Zeit}
+  \Zeile{24mm}{Ort:\\ \hspace*{3mm}\parbox[t]{80mm}{Räume des FAU FabLab\\ U1.238, U1.239, U1.240\\
+    Erwin-Rommel-Straße 60\\ 91058 Erlangen}}
+  \Zeile{24mm}{Hergang:}
+  \Zeile{24mm}{Art und Umfang der Verletzung bzw. Erkrankung:}
+  \Zeile{18mm}{Name der Zeugen:\\[11mm] $\square$ keine Zeugen, nur die verletzte bzw. erkrankte Person}
+  \Abschnitt{Erste-Hilfe-Leistungen}
+  \Zeile{9mm}{Datum und Uhrzeit:\\ \hspace*{40mm}\Zeit}
+  \Zeile{24mm}{Art und Weise der Erste-Hilfe-Maßnahmen:\\[17mm]
+    $\square$ nur Wundschnellverband \hfill $\square$ Vorstellung bei Arzt veranlasst bzw. wird erfolgen}
+  \Zeile{16mm}{Name der Erste Hilfe leistenden Person:\\[9mm] $\square$ Erste Hilfe an sich selbst geleistet}
+\end{tabularx}
+
+\end{document}

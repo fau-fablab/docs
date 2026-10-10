@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Gerätenutzung: was die farbigen Maschinenschilder bedeuten (Aushang A3)
+% CC-BY-SA 3.0, FAU FabLab
+% Früher Hinweisschilder_divers/geraetenutzung.pdf (Illustrator), jetzt LaTeX.
+% Die Schilder selbst: github.com/fau-fablab/hinweisschilder
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a3paper]{scrartcl}
+\usepackage{fablab-aushang}
+\Fabcube
+
+% Beispielschild:  \Beispiel{Farbe}{Gerät}{Regel}{Kleingedrucktes}
+% (Breite fest, weil minipage \textwidth und \linewidth ändert)
+\newlength{\BspBreite}
+\AtBeginDocument{\setlength{\BspBreite}{0.3\textwidth}}
+\newcommand{\Beispiel}[4]{%
+  \tikz\node[fill=#1, draw=black!70, line width=1pt, rounded corners=0.25\SchildText,
+    text width=\BspBreite, align=center, inner sep=0.4\SchildText]
+    {{\bfseries\fontsize{1.05\SchildText}{1.2\SchildText}\selectfont #2\par}
+     \vspace{0.3\SchildText}
+     {\fontsize{0.95\SchildText}{1.1\SchildText}\selectfont #3\par}
+     \vspace{0.3\SchildText}
+     {\fontsize{0.5\SchildText}{0.6\SchildText}\selectfont #4\par}};}
+% eine Zeile: Beispielschild links, Regeln rechts
+\newcommand{\Stufe}[5]{%
+  \par\noindent
+  \begin{minipage}[c]{0.37\linewidth}\Beispiel{#1}{#2}{#3}{#4}\end{minipage}\hfill
+  \begin{minipage}[c]{0.6\linewidth}\begin{itemize}#5\end{itemize}\end{minipage}\par
+  \vspace{0.4\SchildText}{\color{black!40}\rule{\linewidth}{1pt}}\par}
+
+\begin{document}
+\Schild[0.66]
+\SchildKopf[0.85]{Gerätenutzung}
+
+Alle Geräte und Maschinen sind folgendermaßen farbig beschildert:
+
+\Stufe{ampelGruen}{Staubsauger\\ BLITZ-BLANK42}{}{Zum Nass- und Trockensaugen geeignet.}
+  {\item Darf \textbf{ohne} Einweisung eigenständig benutzt werden
+   \item Bei Unklarheiten nachfragen}
+\Stufe{ampelGelb}{Ersatzluftblase}
+  {Selbstständige Benutzung nur mit unterschriebener Wasserwaagen-Einweisung}
+  {Bei Interesse frage einfach einen Betreuer!}
+  {\item Darf \textbf{nach unterschriebener Einweisung} eigenständig benutzt werden
+   \item Einweisung immer beachten}
+\Stufe{ampelRot}{CNC-Pinsel\\ Norbert iPaint}{Benutzung nur nach Rücksprache.}
+  {Im Moment gibt es leider noch keine Einweisung zu diesem Gerät.
+   Bitte sprich mit einem Betreuer.}
+  {\item Darf \textbf{nur nach Rücksprache} mit Betreuern benutzt werden
+   \item Besondere Regelungen sind zu beachten}
+
+\vspace{0.4\SchildText}
+Für alle Nutzer und Gegenstände gilt jederzeit:
+\begin{itemize}
+  \item Maschinenbeschilderung beachten
+  \item FabLab-Eigentum pfleglich behandeln und Beschädigungen einem Betreuer melden
+  \item Anweisungen der Betreuer befolgen
+  \item Menschenverstand einsetzen
+  \item Arbeitsplätze und Geräte nach der Nutzung sauber und ordentlich hinterlassen
+\end{itemize}
+
+\end{document}

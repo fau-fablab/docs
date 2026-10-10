@@ -1,0 +1,31 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Neues Schleifpapier (Schild an der Schleifpapier-Box)
+% CC-BY-SA 3.0, FAU FabLab
+% Früher Hinweisschilder_divers/schleifpapier.svg, jetzt LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper]{scrartcl}
+\usepackage{fablab-aushang}
+\Fabcube
+
+\begin{document}
+\Schild
+\SchildKopf[0.62]{Neues Schleifpapier\\ \en{New sandpaper}}
+
+\Banner[fcRot]{\textbf{Kostenpflichtig!} \en{For a small fee!}}
+
+Wenn du hier etwas herausnimmst, musst du das \textbf{ganze Blatt bezahlen}!\\
+\en{If you take out anything here, you must \textbf{buy the whole sheet}.}
+
+Für kostenlose Reste gibt es obendrüber eine Box „gebrauchtes Schleifpapier“.\\
+\en{There is a box for free remaining pieces on top of this one
+(„gebrauchtes Schleifpapier“ = used sandpaper).}
+
+\vfill
+\begin{center}
+\tikz\node[draw, dashed, line width=1pt, rounded corners=0.3\SchildText,
+  minimum width=0.8\linewidth, minimum height=7\SchildText, text=black!50]
+  {Hier Etiketten hinkleben};
+\end{center}
+\vfill
+
+\end{document}

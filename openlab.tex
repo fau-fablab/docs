@@ -1,0 +1,31 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wegweiser zum OpenLab: Seite 1 an die Eingangstür (neben der Doppeltür),
+% Seiten 2-4 mit Pfeilen für den Weg
+% CC-BY-SA 3.0, FAU FabLab
+% Früher aushaenge/openlab.odt, jetzt LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,landscape]{scrartcl}
+\usepackage{fablab-aushang}
+
+% \Pfeil{Winkel}: großer schwarzer Pfeil, 0 = rechts, 180 = links
+\newcommand{\Pfeil}[1]{%
+  \tikz[rotate=#1]\fill (0,-1.2) -- (7,-1.2) -- (7,-3) -- (11,0) -- (7,3) -- (7,1.2) -- (0,1.2) -- cycle;}
+\newcommand{\Wegweiser}[1]{%
+  \begin{center}
+    \Logo{3\SchildText}\par\vfill
+    #1\par\vfill
+  \end{center}}
+
+\begin{document}
+\Schild
+
+\Wegweiser{\Gross{Hier zur Tür rein,\\ rechts, 10\,m geradeaus}\par\vspace{\SchildText}
+  Wenn die Tür geschlossen ist,\\ bitte rechts 2--3 Fenster weiter am Fenster klopfen.}
+\newpage
+\Wegweiser{\Pfeil{0}}
+\newpage
+\Wegweiser{\Pfeil{180}}
+\newpage
+\Wegweiser{\Pfeil{180}}
+
+\end{document}

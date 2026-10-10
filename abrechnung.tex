@@ -1,78 +1,67 @@
-\newcommand{\basedir}{fablab-document/}
-\documentclass{\basedir fablab-document}
-\usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
-\date{}
-\author{}
-\title{Abrechnungsliste}
-
-\newcommand{\thickhline}{\noalign{\hrule height 2pt}}
-\usepackage{eurosym}
-
-\usepackage{amssymb}
-\fancyfoot[L]{}
-\fancyfoot[C]{Dateifreigabe/1\_Fablab\_Einweisungen/docs/abrechnung.pdf, erzeugt aus https://github.com/fau-fablab/docs}
-\fancyfoot[R]{}
-
-\begin{document}
-	\vspace*{-5em}
-	
-	
-	
-    \vspace{10em}
-	{\LARGE Entwurf - nicht verwenden - nicht freigegeben. Bitte stattdessen Mail an kasse@fablab.fau.de.}
-    \vspace{10em}
-	
-	
-\begin{enumerate}
-	\item Bitte fülle Name, Anschrift usw. vollständig aus. Trage dann deine Einkäufe ein.
-	\item Die Liste bleibt im FabLab im Ordner \enquote{Abrechnungslisten}. Frage dazu die Betreuer. {\small (Aus Datenschutzgründen muss der Ordner in die Betreuerschublade. Ausnahme Robotics/i4: extra Ordner im Hauptraum.) }
-	\item Nach einiger Zeit wird eine Sammelrechnung über die eingetragenen Beträge geschickt.
-\end{enumerate} 
-
-% \textbf{Wegen des hohen Verwaltungsaufwands beträgt die Mindestsumme einer Rechnung 50 Euro.} Wenn innerhalb von sechs Monaten nach Ausstellen dieser Liste keine fünfzig Euro zusammen kommen, muss entweder der Betrag bar bezahlt werden oder es wird trotzdem eine Rechnung über 50 Euro ausgestellt.
-
-\newcommand{\breite}{12.5cm}
-
-\begin{tabbing}
-\hspace{5cm} \= hspace{3cm}  \= \kill
-\textbf{ggf. Firma/Institut: }\> \rule{\breite}{0.4pt}\\[2ex]
-\textbf{Name:} \> \rule{\breite}{0.4pt}\\[2ex]
-\textbf{E-Mail: {\small (immer ausfüllen!)}}\> \rule{\breite}{0.4pt} \\[3ex]
-\textbf{Anschrift: {\small (immer ausfüllen!)} } \> \rule{\breite}{0.4pt} \\[2ex]
-\textbf{Besonderheiten: }\> $\square$ Vor Rechnungsstellung erst nachfragen (z.B. wegen Auftragsnummer)\\
-\> $\square$ Bitte eine Kopie dieser Liste mit der Rechnung mitschicken.\\
-\> $\square$ Rechnung per Post statt per E-Mail\\
-\> $\square$ Sonstiges:
-\end{tabbing}
-
-\textbf{\large Mit deiner Unterschrift bestätigst du, für die Zahlung persönlich zu haften.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abrechnungsliste (Formular zum Ausdrucken) -- Entwurf, nicht freigegeben
+% CC-BY-SA 3.0, FAU FabLab
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,10pt]{scrartcl}
+\usepackage{fablab-aushang}
+\usepackage{csquotes}
 
 \newcommand{\bsp}[1]{\textcolor{gray}{\itshape #1}}
-\newcommand{\beispielzeile}[5]{\bsp{#2} & \bsp{#3} & \bsp{#4} & \bsp{#5} \\ \hline}
-\newcommand{\leerzeile}{\vbox{\vspace{2.4em}} & & & \\ \hline}
-\vspace{-.4em}
-\begin{tabularx}{\textwidth}{|c|X|c|c|} \hline
-\bfseries Datum      &  \bfseries Beschreibung  & \bfseries Betrag & \bfseries Name, Unterschrift \\\thickhline
-\beispielzeile{BSP}{1.1.12}{1 Platte Acryl 3mm, lasern 15min}{x,xx}{B. Beispiel ~ $\mathfrak{Beispiel}$}
-% \beispielzeile{BSP}{1.1.12}{Kleinteile und Schrauben}{12,34€}{B. Beispiel ~ $\mathfrak{Beispiel}$}
-% \leerzeile
-\leerzeile
-\leerzeile
-\leerzeile
-\leerzeile
-\leerzeile
-\leerzeile
-\leerzeile
-\leerzeile
-\leerzeile
-\leerzeile
-\leerzeile
-\leerzeile
+\newcommand{\Leerzeile}{\rule{0pt}{9mm} & & & \\ \hline}
+\newcommand{\dickeLinie}{\noalign{\hrule height 0.8pt}}
+\newcommand{\Rand}{\noalign{\hrule height 1.2pt}}
+\newcommand{\Feld}{\rule{\linewidth}{0.4pt}}
+
+\begin{document}
+\Kopf{Abrechnungsliste}{Einkäufe auf Rechnung}
+
+\fcolorbox{warnung}{warnung!12}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\large
+  \textbf{Entwurf -- nicht verwenden -- nicht freigegeben.}
+  Bitte stattdessen Mail an \texttt{kasse@fablab.fau.de}.}}
+
+\begin{enumerate}[itemsep=0pt]
+  \item Bitte fülle Name, Anschrift usw. vollständig aus. Trage dann deine Einkäufe ein.
+  \item Die Liste bleibt im FabLab im Ordner \enquote{Abrechnungslisten}. Frage dazu die Betreuer.
+        {\small (Aus Datenschutzgründen muss der Ordner in die Betreuerschublade. Ausnahme
+        Robotics/i4: extra Ordner im Hauptraum.)}
+  \item Nach einiger Zeit wird eine Sammelrechnung über die eingetragenen Beträge geschickt.
+\end{enumerate}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{}p{45mm}X@{}}
+  \textbf{ggf. Firma/Institut:} & \Feld \\
+  \textbf{Name:} & \Feld \\
+  \textbf{E-Mail:} {\small (immer ausfüllen!)} & \Feld \\
+  \textbf{Anschrift:} {\small (immer ausfüllen!)} & \Feld \\
+  \textbf{Besonderheiten:} & $\square$ Vor Rechnungsstellung erst nachfragen (z.\,B. wegen Auftragsnummer) \\
+  & $\square$ Bitte eine Kopie dieser Liste mit der Rechnung mitschicken. \\
+  & $\square$ Rechnung per Post statt per E-Mail \\
+  & $\square$ Sonstiges: \\
 \end{tabularx}
 
-Liste voll? Oder Rechnung gewünscht? Schreibe an \texttt{kasse@fablab.fau.de} und fange eine neue Liste an.
+\medskip
+\textbf{\large Mit deiner Unterschrift bestätigst du, für die Zahlung persönlich zu haften.}
 
-{\color{gray} \small(Details für Betreuer: \url{https://wiki.fablab.fau.de/interna/finanzen})}
+\medskip
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.2}
+\arrayrulecolor{black!60}
+\begin{tabularx}{\linewidth}{!{\color{black}\vrule width 1.2pt}p{22mm}|X|p{22mm}|p{45mm}!{\color{black}\vrule width 1.2pt}}
+  \Rand
+  \rowcolor{kopf}
+  \textbf{Datum} & \textbf{Beschreibung} & \textbf{Betrag} & \textbf{Name, Unterschrift} \\
+  \dickeLinie
+  \bsp{1.1.12} & \bsp{1 Platte Acryl 3\,mm, lasern 15\,min} & \bsp{x,xx\,€} & \bsp{B. Beispiel} \\ \hline
+  \Leerzeile \Leerzeile \Leerzeile \Leerzeile \Leerzeile \Leerzeile
+  \Leerzeile \Leerzeile \Leerzeile \Leerzeile
+  \Rand
+\end{tabularx}
 
-interne Notizen:  \rule{3cm}{0.4pt}\hspace{1cm} Summe:  \rule{2cm}{0.4pt} \hspace{1cm} Erledigt am:  \rule{4cm}{0.4pt} 
+\medskip
+Liste voll? Oder Rechnung gewünscht? Schreibe an \texttt{kasse@fablab.fau.de} und fange eine neue Liste an.\\
+{\color{gray}\small (Details für Betreuer: \texttt{wiki.fablab.fau.de/interna/finanzen})}
+
+\medskip
+Interne Notizen: \rule{30mm}{0.4pt}\hfill Summe: \rule{20mm}{0.4pt}\hfill Erledigt am: \rule{35mm}{0.4pt}
+
 \end{document}

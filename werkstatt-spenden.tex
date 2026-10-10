@@ -1,0 +1,31 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Werkstattspenden (Aushang in der Werkstatt)
+% CC-BY-SA 3.0, FAU FabLab
+% Früher Hinweisschilder_divers/werkstatt-spenden.pdf (Illustrator), jetzt LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,landscape]{scrartcl}
+\usepackage{fablab-aushang}
+\Fabcube
+
+\begin{document}
+\Schild
+\SchildKopf{Werkstattspenden \en{Workshop Donations}}
+
+\begin{Spalte}[0.75\linewidth]
+Kostenlose Materialien, Verschleiß und Reparaturen kosten uns auch Geld,
+erwäge bitte eine Spende für die Nutzung.
+\en{Free materials, wear and tear of tools cost us money, so please consider donating for use.}
+\end{Spalte}
+
+\vspace{1.2\SchildText}
+\begin{tikzpicture}[baseline]
+  \node[anchor=west, align=left] (e) at (0,0) {Empfehlung:\\ \en{Suggestion:}};
+  \node[anchor=west, font=\fontsize{2.6\SchildText}{3\SchildText}\selectfont]
+    (p) at ([xshift=0.8\SchildText]e.east) {1\,Euro / h};
+  \node[anchor=west, draw, dashed, line width=1pt, rounded corners=0.3\SchildText,
+    align=center, minimum width=7.5\SchildText, minimum height=4\SchildText,
+    font=\fontsize{0.7\SchildText}{0.85\SchildText}\selectfont]
+    at ([xshift=1.2\SchildText]p.east) {Spendenetikett\\ hier aufkleben.};
+\end{tikzpicture}
+
+\end{document}
