@@ -12,5 +12,5 @@ fab12_bericht:
 	$(MAKE) -C fab12_bericht
 
 # TeX Dateien
-TARGET=nachkaufliste abrechnung AusleihlisteWerkzeug Drehzahltabelle
+TARGET=nachkaufliste abrechnung AusleihlisteWerkzeug Drehzahltabelle Acrylpreis
 include fablab-document/Makefile.include
