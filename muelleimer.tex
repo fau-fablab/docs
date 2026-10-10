@@ -1,0 +1,36 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mülleimer (Schild über den Mülleimern)
+% CC-BY-SA 3.0, FAU FabLab
+% Früher Hinweisschilder_divers/muelleimer.pdf (Illustrator), jetzt LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,landscape]{scrartcl}
+\usepackage{fablab-aushang}
+\Fabcube
+
+\begin{document}
+\Schild
+\SchildKopf{Mülleimer \en{Trash}}
+
+\begin{Spalte}[0.68\linewidth]
+\begin{itemize}
+  \item Volle Müllsäcke zuknoten und vor die Tür stellen.\\
+        \en{Place full bags in front of the door.}
+  \item Neue Müllsäcke liegen unten.\\
+        \en{Trash bags are underneath.}
+\end{itemize}
+\end{Spalte}
+
+\vfill
+% Die Pfeile zeigen auf die beiden Mülleimer darunter
+\begin{tikzpicture}[x=\linewidth, y=\SchildText, baseline=(current bounding box.south)]
+  \node[fill=fcBlau, rounded corners=0.3\SchildText, minimum width=0.46\linewidth,
+    minimum height=2.2\SchildText, font=\GrossSchrift] (pa) at (0.24,0) {Papier \en{Paper}};
+  \node[fill=fcRot, rounded corners=0.3\SchildText, minimum width=0.46\linewidth,
+    minimum height=2.2\SchildText, font=\GrossSchrift] (re) at (0.76,0) {Restmüll \en{Landfill}};
+  \draw[-{Triangle[length=40pt, width=40pt]}, line width=11pt]
+    ([yshift=-0.4\SchildText]pa.south) -- ++(-0.07,-3.4);
+  \draw[-{Triangle[length=40pt, width=40pt]}, line width=11pt]
+    ([yshift=-0.4\SchildText]re.south) -- ++(0.07,-3.4);
+\end{tikzpicture}
+
+\end{document}

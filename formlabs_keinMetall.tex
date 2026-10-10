@@ -1,0 +1,26 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Achtung: nur Holzspatel (Schild am Formlabs-SLA-Drucker)
+% CC-BY-SA 3.0, FAU FabLab
+% Früher Hinweisschilder_divers/formlabs_keinMetall.svg/.pdf, jetzt LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,landscape]{scrartcl}
+\usepackage{fablab-aushang}
+\Fabcube
+
+\begin{document}
+\Schild
+\SchildKopf{Achtung \en{Attention}}
+
+\WarnBanner{\Gross{Nur Holzspatel zum Lösen verwenden}\\
+  \Gross{\en{Use only wooden spatula for loosening}}}
+
+\vspace{0.6\SchildText}
+\begin{Spalte}[0.62\linewidth]
+\textbf{Nur Holzspatel zum Ablösen der gedruckten Objekte verwenden.
+Metall verkratzt die Buildplatte.}
+
+\en{Only use wooden spatulas to remove the printed objects.
+Metal damages the build plate.}
+\end{Spalte}
+
+\end{document}

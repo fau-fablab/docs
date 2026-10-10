@@ -6,28 +6,7 @@
 % n = vc * 1000 / (pi * d * z)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper,landscape,10pt]{scrartcl}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\renewcommand{\familydefault}{\sfdefault}
-\usepackage[ngerman]{babel}
-\usepackage[a4paper,landscape,left=12mm,right=12mm,top=10mm,bottom=16mm,footskip=8mm]{geometry}
-\usepackage{graphicx}
-\usepackage[table]{xcolor}
-\usepackage{array}
-\usepackage{fancyhdr}
-
-% Versionsnummer wie in fablab-document (version.tex erzeugt make)
-\InputIfFileExists{version}{}{\newcommand{\Version}{Entwurf \today}}
-
-\definecolor{fablab}{RGB}{20,51,105}
-
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyfoot[L]{\scriptsize Quelle: \texttt{github.com/fau-fablab/docs}}
-\fancyfoot[R]{\scriptsize Version \Version}
-\setlength{\parindent}{0pt}
+\usepackage{fablab-aushang}
 
 % Materialfarben (Kopf der Tabelle)
 \definecolor{mHolz}{HTML}{D9A066}
@@ -50,16 +29,9 @@
 \begin{document}
 
 % ------------------------------ Kopf ---------------------------------
-\begin{minipage}[b]{0.72\linewidth}
-  {\LARGE\bfseries Drehzahltabelle Standbohrmaschine}\\[2mm]
-  \normalsize Bohrer und Kegelsenker nach Werkstoff und Werkzeug.
-  Alle Drehzahlen in Umdrehungen pro Minute (U/min).
-\end{minipage}\hfill
-\begin{minipage}[b]{0.25\linewidth}\raggedleft
-  \IfFileExists{fablab-document/logo/Logo/Logo-FAU-bunt.pdf}%
-    {\includegraphics[height=11mm]{fablab-document/logo/Logo/Logo-FAU-bunt.pdf}}{\textbf{FAU FabLab}}
-\end{minipage}\\[1mm]
-{\color{fablab}\rule{\linewidth}{0.8pt}}\\[1.5mm]
+\Kopf{Drehzahltabelle Standbohrmaschine}{%
+  Bohrer und Kegelsenker nach Werkstoff und Werkzeug.
+  Alle Drehzahlen in Umdrehungen pro Minute (U/min).}
 
 % ----------------------------- Tabelle -------------------------------
 \setlength{\tabcolsep}{3pt}

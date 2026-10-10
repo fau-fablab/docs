@@ -1,0 +1,44 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fahrrad platt? Plakat für die Fahrradständer (A3, Seite 1 deutsch, Seite 2 englisch)
+% CC-BY-SA 3.0, FAU FabLab
+% Früher Hinweisschilder_divers/Fahrradstaender.pdf (Illustrator), jetzt LaTeX.
+% Karte: img/karte-fablab.pdf, aus dem alten Plakat ausgeschnitten
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a3paper,landscape]{scrartcl}
+\usepackage{fablab-aushang}
+
+% \Plakat{Überschrift}{komm ins}{Text}{Öffnungszeiten}
+\newcommand{\Plakat}[4]{%
+  \begin{center}
+    \fontsize{2.8\SchildText}{3.1\SchildText}\selectfont #1
+  \end{center}
+  \vfill
+  \begin{tikzpicture}
+    % Der rote Pfeil in der Karte endet am rechten Rand auf 58 % der Höhe
+    \node[anchor=south west, inner sep=0pt] (karte) at (0,0)
+      {\includegraphics[height=0.6\textheight]{img/karte-fablab.pdf}};
+    \coordinate (pfeil) at ($(karte.south east)!0.58!(karte.north east)$);
+    \node[anchor=west, inner sep=0pt] (logo) at ([xshift=2.5\SchildText]pfeil)
+      {\Logo{3.6\SchildText}};
+    \draw[warnung, line width=3pt] (pfeil) -- ([yshift=-0.2\SchildText]logo.south west)
+      -- ([yshift=-0.2\SchildText]logo.south east);
+    \node[anchor=south west, font=\fontsize{1.9\SchildText}{2.2\SchildText}\selectfont] at ([yshift=0.3\SchildText]logo.north west) {#2};
+    \node[anchor=south east, align=right, text width=0.62\linewidth, inner sep=0pt, font=\fontsize{1.3\SchildText}{1.55\SchildText}\selectfont]
+      at (logo.east |- karte.south)
+      {#3\par\vspace{0.6\SchildText}\fontsize{0.8\SchildText}{\SchildText}\selectfont #4};
+  \end{tikzpicture}}
+
+\begin{document}
+\Schild
+
+\Plakat{Fahrrad \textcolor{fablab}{platt}?\\ \textcolor{fablab}{Reifen} kaputt?}
+  {komm ins}
+  {Wir haben Werkzeug, Druckluft, Material und gute Ratschläge.}
+  {Öffnungszeiten stehen auf \texttt{fablab.fau.de/termine}}
+\newpage
+\Plakat{\textcolor{fablab}{Broken} tire?\\ \textcolor{fablab}{Flat} bike?}
+  {come to the}
+  {We provide tools, materials, compressed air and advice.}
+  {Our opening hours are on \texttt{fablab.fau.de/termine}}
+
+\end{document}

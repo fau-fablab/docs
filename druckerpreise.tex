@@ -1,0 +1,53 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ausdrucken kostet Geld! Preise am Farblaserdrucker
+% CC-BY-SA 3.0, FAU FabLab
+% Früher aushaenge/druckerpreise.svg, jetzt LaTeX.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,landscape]{scrartcl}
+\usepackage{fablab-aushang}
+\Fabcube
+
+% Blatt Papier als Symbol, #1 = Inhalt (TikZ)
+\newcommand{\Blatt}[1]{%
+  \begin{tikzpicture}[x=0.8mm, y=0.8mm]
+    \draw[line width=1.2pt, fill=white] (0,0) rectangle (21,29.7);
+    #1
+  \end{tikzpicture}}
+% \Preis{Symbol}{Art}{Preis}{Zusatz}
+\newcommand{\Preis}[4]{%
+  \begin{tabular}[t]{@{}c@{}}
+    #1\\[2mm]
+    \textbf{#2}\\
+    {\GrossSchrift\bfseries #3}\\
+    \fontsize{0.7\SchildText}{0.85\SchildText}\selectfont #4
+  \end{tabular}}
+
+\begin{document}
+\Schild
+\SchildKopf[0.85]{Ausdrucken kostet Geld!}
+
+\textcolor{fablab}{\textbf{„Pulverbeschichter“}} -- OKI C5900 Farblaserdrucker
+
+\vspace{\SchildText}
+\fontsize{0.85\SchildText}{\SchildText}\selectfont
+\begin{tabular}{@{}c@{\hspace{1.5\SchildText}}c@{}}
+  \textbf{Schwarzweiß} & \textcolor{fablab}{\textbf{Farbig}} \\[2mm]
+  \Preis{\Blatt{\fill[black!70] (13,17) circle (3); \fill[black!30] (13,17) -- (16,17) arc (0:120:3) -- cycle;}}
+        {schwarzweiß}{10\,ct}{einseitig}
+  \hspace{0.4\SchildText}
+  \Preis{\Blatt{\foreach \y in {5,9,...,25} {\draw[line width=1pt] (3,\y) -- (18,\y);}
+          \fill (7,11) rectangle (14,18);}}
+        {Platinenlayouts}{kostenlos*}{*im Preis der\\ Platinenfertigung\\ enthalten}
+  &
+  \Preis{\Blatt{\foreach \y in {6,9,...,24} {\draw[black!50] (3,\y) -- (18,\y);}}}
+        {Text}{20\,ct}{einseitig}
+  \hspace{0.4\SchildText}
+  \Preis{\Blatt{\fill[cyan] (15,25) circle (2.5); \fill[red] (6,15) circle (2);
+          \fill[yellow] (14,8) circle (3);}}
+        {wenig Füllung}{40\,ct}{einseitig}
+  \hspace{0.4\SchildText}
+  \Preis{\Blatt{\shade[top color=blue!80, bottom color=green] (2,2) rectangle (19,27.7);}}
+        {Foto/Grafik}{70\,ct}{einseitig}
+\end{tabular}
+
+\end{document}
