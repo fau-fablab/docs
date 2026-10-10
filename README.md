@@ -6,7 +6,7 @@ Diverse Dokumente und Aushänge des [FAU FabLab](https://fablab.fau.de).
 Inhalt
 ------
 
-- Ausleihliste Werkzeug und Nachkaufliste (LaTeX, werden gebaut)
+- Ausleihliste Werkzeug, Nachkaufliste und Drehzahltabelle der Standbohrmaschine (LaTeX, werden gebaut)
 - Abrechnungsliste (Entwurf, nicht freigegeben)
 - Reisebericht Fab12 (`fab12_bericht/`)
 - Hinweisschilder, Aushänge, Verbandbuch, Raumplan und Schild am EEI-Briefkasten als fertige Dateien (PDF, ODT, SVG)
@@ -18,6 +18,7 @@ Die neueste Version aus [GitHub](https://github.com/fau-fablab/docs) ist als PDF
 
 - [Ausleihliste Werkzeug](https://brain.fablab.fau.de/build/docs/AusleihlisteWerkzeug.pdf)
 - [Nachkaufliste](https://brain.fablab.fau.de/build/docs/nachkaufliste.pdf)
+- [Drehzahltabelle Standbohrmaschine](https://brain.fablab.fau.de/build/docs/Drehzahltabelle.pdf) (Aushang)
 - [Abrechnungsliste](https://brain.fablab.fau.de/build/docs/abrechnung.pdf) (Entwurf)
 
 Außerdem baut eine GitHub Action die PDFs bei jedem Push. Auf dem Hauptbranch entsteht dabei ein
