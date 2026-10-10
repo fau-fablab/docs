@@ -9,6 +9,7 @@
 %   \usepackage{fablab-aushang}
 %
 % Formulare und Tabellen:  \Kopf{Titel}{Zeile darunter}
+% Querformat: feine Linie über der Fußzeile (automatisch)
 % Schilder:                \Schild  (große Schrift, passend zum Papierformat)
 %                          \SchildKopf{Titel}  \en{englischer Text}
 %                          \Banner[Farbe]{Text}  \Fabcube (Hintergrund)
@@ -141,12 +142,24 @@
 \newcommand{\WarnBanner}[1]{%
   \Banner[warnung]{\color{white}\renewcommand{\en}[1]{{\itshape ##1}}#1}}
 
+% Querformat: feine Linie über der Fußzeile, darunter kein Fabcube
+\newlength{\FussLinie}  % Höhe der Linie über der Papierunterkante, 0pt = keine Linie
+\AtBeginDocument{%
+  \ifdim\paperwidth>\paperheight
+    \setlength{\FussLinie}{\dimexpr\paperheight-1in-\voffset-\topmargin-\headheight
+      -\headsep-\textheight-0.4\footskip\relax}%
+    \AddToShipoutPictureFG{\AtPageLowerLeft{%
+      \put(\LenToUnit{1in+\hoffset+\oddsidemargin},\LenToUnit{\FussLinie}){%
+        \color{fablab}\rule{\textwidth}{0.4pt}}}}%
+  \fi}
+
 % Fabcube blass im Hintergrund unten rechts, auf allen folgenden Seiten
 \newlength{\FabcubeGroesse}
 \newcommand{\Fabcube}{%
   \AddToShipoutPictureBG{%
     \setlength{\FabcubeGroesse}{0.62\dimexpr\ifdim\paperwidth<\paperheight\paperwidth\else\paperheight\fi\relax}%
-    \AtPageLowerLeft{%
-      \put(\LenToUnit{\paperwidth-0.78\FabcubeGroesse},\LenToUnit{-0.22\FabcubeGroesse}){%
-        \tikz\node[opacity=0.32, inner sep=0pt]
-          {\includegraphics[width=\FabcubeGroesse]{img/fab_cube.pdf}};}}}}
+    \AtPageLowerLeft{\put(0,0){\tikz[overlay]{%
+      \clip (0,\FussLinie) rectangle (\paperwidth,\paperheight);
+      \node[anchor=south west, opacity=0.32, inner sep=0pt]
+        at (\paperwidth-0.78\FabcubeGroesse,-0.22\FabcubeGroesse)
+        {\includegraphics[width=\FabcubeGroesse]{img/fab_cube.pdf}};}}}}}
